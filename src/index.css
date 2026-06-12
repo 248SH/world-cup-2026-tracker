@@ -1,0 +1,18 @@
+:root {
+    --dark-black: #13212Aff;
+    --light-bronze: #cf995fff;
+    --dark-blue: #094d92ff;
+    --light-blue: #048BA8ff;
+    --dark-green: #4f7942ff;
+    --light-green: #7bb369ff;
+    --dark-red: #CD4631ff;
+}
+
+body, #root {
+    background-color: var(--dark-black);
+    color: #fff;
+}
+
+#root {
+    height: 100vh;
+}
