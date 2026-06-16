@@ -75,12 +75,13 @@ function App() {
         <BrowserRouter basename='/worldcuptracker'>
           <NavBar />
           <Routes>
-            <Route path='/' element={<MatchesPage />} />
-            <Route path='/teams' element={<TeamsPage />} />
-            <Route path='/team-details/:id' element={<TeamDetailsPage />} />
-            <Route path='/groups' element={<GroupStandingsPage />} />
-            <Route path='/standings' element={<KnockoutStandingsPage />} />
-          </Routes>
+  <Route path='/' element={<MatchesPage />} />
+  <Route path='/teams' element={<TeamsPage />} />
+  <Route path='/team-details/:id' element={<TeamDetailsPage />} />
+  <Route path='/groups' element={<GroupStandingsPage />} />
+  <Route path='/standings' element={<KnockoutStandingsPage />} />
+  <Route path='*' element={<Navigate to='/' replace />} />
+</Routes>
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>
