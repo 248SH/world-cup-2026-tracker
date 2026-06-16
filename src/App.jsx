@@ -9,6 +9,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { Navigate } from 'react-router-dom'
 
 const theme = createTheme({
   typography: {
@@ -71,7 +72,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <BrowserRouter>
+        <BrowserRouter basename='/worldcuptracker'>
           <NavBar />
           <Routes>
             <Route path='/' element={<MatchesPage />} />
