@@ -27,9 +27,13 @@ const NavBar = () => {
 
     return (
         <AppBar position="static" sx={{ backgroundColor: 'var(--dark-blue)' }}>
-            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Toolbar sx={{ 
+    display: 'flex', 
+    justifyContent: 'space-between',
+    px: { xs: 1, sm: 2 }  // smaller padding on mobile
+}}>
                 <Typography variant="h4" fontWeight="bold">
-                    World Cup 2026
+                    World Cup 2026 Tracker
                 </Typography>
 
                 {isMobile ? (
@@ -54,6 +58,7 @@ const NavBar = () => {
                                     <CloseIcon />
                                 </IconButton>
                             </ListItem>
+                            <nav>
                                 {navLinks.map((link) => (
                                     <ListItem key={link.to} disablePadding>
                                         <ListItemButton
@@ -71,6 +76,7 @@ const NavBar = () => {
                                         </ListItemButton>
                                     </ListItem>
                                 ))}
+                                </nav>
                             </List>
                         </Drawer>
                     </>

@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { Navigate } from 'react-router-dom'
+import Box from '@mui/material/Box'
 
 const theme = createTheme({
   typography: {
@@ -67,7 +68,15 @@ MuiInputLabel: {
 }
 })
 
+
+
 function App() {
+
+  const Footer = () => (
+    <Box sx={{ textAlign: 'center', padding: '16px', mt: 4, color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}>
+        Match data sourced from <a href="https://github.com/openfootball/worldcup.json" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.4)' }}>openfootball</a>. Flag images from <a href="https://flagcdn.com" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.4)' }}>flagcdn.com</a>.
+    </Box>
+)
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -82,6 +91,9 @@ function App() {
   <Route path='/standings' element={<KnockoutStandingsPage />} />
   <Route path='*' element={<Navigate to='/' replace />} />
 </Routes>
+          <footer>
+          <Footer />
+          </footer>
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>

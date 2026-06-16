@@ -53,7 +53,7 @@ useEffect(() => {
         <PageContainer>
             <PageHeader title={squad?.name || 'Team Details'} subtitle="View the squad and player information for this team." />
             <Box sx={{ display: 'flex', justifyContent: 'center', transform: 'scale(0.65)', height: '300px',transformOrigin: 'top center'}}>
-                {squad && <TeamCard {...teamInfo} />}
+                {squad && <TeamCard {...teamInfo} fontSize="clamp(1rem, 2vw, 2rem)" />}
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {playerOrder.map(pos => (

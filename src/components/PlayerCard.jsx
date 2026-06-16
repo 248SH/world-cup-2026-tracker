@@ -9,18 +9,6 @@ import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-const getFlag = (teamName) => {
-    const code = teamNameToCountryCode[teamName]
-    if (!code) return null
-    return (
-        <img
-            src={`https://flagcdn.com/w40/${code}.png`}
-            alt={teamName}
-            style={{ width: '60px', height: '40px', objectFit: 'cover' }}
-        />
-    )
-}
-
 const getPosition = (pos) => {
     const lookup = {
         'GK': 'Goalkeeper',
@@ -31,8 +19,7 @@ const getPosition = (pos) => {
     return lookup[pos] || pos
     }
 
-    const getLogo = (pos) => {
-        const isMobile = useMediaQuery('(max-width: 600px)')
+    const getLogo = (pos, isMobile) => {
         const lookup = {
             'GK': <SportsHandballIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />,
             'DF': <ShieldOutlinedIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />,
@@ -50,6 +37,7 @@ const getPosition = (pos) => {
     }
 
 const PlayerCard = ({ name, number, pos, date_of_birth }) => {
+        const isMobile = useMediaQuery('(max-width: 600px)')
     return (
         <Box sx={{
             ...shieldCard,
@@ -60,7 +48,7 @@ const PlayerCard = ({ name, number, pos, date_of_birth }) => {
             gap: '8px',
         }}>
             <Box sx={{marginBottom: '15px'}}>
-            {getLogo(pos)}
+            {getLogo(pos, isMobile)}
             </Box>
             <Typography variant="h5" mb={0.5} sx={{ color: 'white' }}>
                 #{number}

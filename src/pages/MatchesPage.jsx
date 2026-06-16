@@ -56,7 +56,6 @@ const MatchesPage = () => {
   return (
     <PageContainer>
       <PageHeader title="Matches" subtitle="Browse fixtures by round, date, or search for individual teams." />
-
       <div style={{ display: 'flex', gap: '16px', marginBottom: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
         <TextField
           size="small"
@@ -69,7 +68,8 @@ const MatchesPage = () => {
           <InputLabel>Round</InputLabel>
           <Select
             value={selectedRound}
-            onChange={(e) => setSelectedRound(e.target.value)}
+            onChange={(e) => { setSelectedRound(e.target.value)
+              setSelectedDate(null) }}
             label="Round"
           >
             <MenuItem value="">All Rounds</MenuItem>
@@ -80,14 +80,17 @@ const MatchesPage = () => {
         </FormControl>
         <DatePicker
   value={selectedDate}
-  onChange={(date) => setSelectedDate(date)}
+  onChange={(date) => {
+    setSelectedDate(date)
+    setSelectedRound('')
+}}
   slotProps={{ textField: { size: 'small' }, onClick: (e) => e.currentTarget.querySelector('input').click() }}
   format="dd-MM-yyyy"
 />
       </div>
 
       {Object.entries(groupedMatches).map(([round, roundMatches]) => (
-        <div key={round} style={{ backgroundColor: 'var(--dark-green)', marginBottom: '50px', border: '5px solid white', borderRadius: '15px', padding: '16px' }}>
+        <section key={round} style={{ backgroundColor: 'var(--dark-green)', marginBottom: '50px', border: '5px solid white', borderRadius: '15px', padding: '16px' }}>
           <Typography align="center" variant="h4" component="h2" sx={{ color: 'white'}}>
             {round}
           </Typography>
@@ -96,12 +99,12 @@ const MatchesPage = () => {
           </Typography>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', marginBottom: '32px' }}>
             {roundMatches.map((match, index) => (
-              <div key={index} style={{ width: isMobile ? '100%' : '35%' }}>
+              <article key={index} style={{ width: isMobile ? '100%' : '35%' }}>
                 <MatchCard {...match} />
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
       ))}
 
     </PageContainer>
