@@ -73,8 +73,8 @@ MuiInputLabel: {
 function App() {
 
   const Footer = () => (
-    <Box sx={{ textAlign: 'center', padding: '16px', mt: 4, color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}>
-        Match data sourced from <a href="https://github.com/openfootball/worldcup.json" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.4)' }}>openfootball</a>. Flag images from <a href="https://flagcdn.com" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.4)' }}>flagcdn.com</a>.
+    <Box sx={{ textAlign: 'center', padding: '16px', mt: 4, color: 'rgba(255,255,255,0.65)', fontSize: '0.75rem' }}>
+        Match data sourced from <a href="https://github.com/openfootball/worldcup.json" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.65)' }}>openfootball</a>. Flag images from <a href="https://flagcdn.com" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.65)' }}>flagcdn.com</a>.
     </Box>
 )
   return (
