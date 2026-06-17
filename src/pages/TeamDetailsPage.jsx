@@ -7,7 +7,6 @@ import PageHeader from '../components/PageHeader'
 import PageContainer from '../components/PageContainer'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
-import useMediaQuery from '@mui/material/useMediaQuery'
 
 const getPosition = (pos) => {
     const lookup = {

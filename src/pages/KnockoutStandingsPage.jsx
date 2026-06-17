@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import PageHeader from '../components/PageHeader'
 import GroupCard from '../components/GroupCard'

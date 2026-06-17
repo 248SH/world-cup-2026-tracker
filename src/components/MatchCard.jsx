@@ -10,7 +10,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React from "react";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import GroupsIcon from "@mui/icons-material/Groups";
 import StadiumIcon from "@mui/icons-material/Stadium";
@@ -36,7 +35,6 @@ const getFlag = (teamName) => {
 
 const MatchCard = ({
   round,
-  date,
   time,
   team1,
   team2,
@@ -46,7 +44,6 @@ const MatchCard = ({
   goals1,
   goals2,
 }) => {
-  const id = React.useId();
   return (
     <Card
       sx={{

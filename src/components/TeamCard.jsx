@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import teamNameToCountryCode from "../lib/teamNameToCountryCode";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import teamColours from "../lib/teamColours";
 
 const getFlagUrl = (teamName) => {
@@ -10,7 +9,7 @@ const getFlagUrl = (teamName) => {
   return `https://flagcdn.com/${code}.svg`;
 };
 
-const TeamCard = ({ name, fifa_code, group, confed, fontSize }) => {
+const TeamCard = ({ name, group, confed, fontSize }) => {
   const colours = teamColours[name] || {
     primary: "var(--dark-green)",
     secondary: "white",
@@ -25,7 +24,6 @@ const TeamCard = ({ name, fifa_code, group, confed, fontSize }) => {
         border: "7px solid rgba(255, 255, 255, 0.8)",
         borderRadius: "10px 10px 50px 50px",
         display: "flex",
-        height: "25vw",
         flexDirection: "column",
         width: "clamp(280px, 45vw, 300px)",
         height: "clamp(300px, 40vw, 450px)",

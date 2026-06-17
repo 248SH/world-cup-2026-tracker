@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import teamNameToCountryCode from '../lib/teamNameToCountryCode'
 import { shieldCard } from '../lib/cardStyles'
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import SportsHandballIcon from '@mui/icons-material/SportsHandball';
@@ -8,16 +7,6 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import useMediaQuery from '@mui/material/useMediaQuery'
-
-const getPosition = (pos) => {
-    const lookup = {
-        'GK': 'Goalkeeper',
-        'DF': 'Defender',
-        'MF': 'Midfielder',
-        'FW': 'Forward'
-    }
-    return lookup[pos] || pos
-    }
 
     const getLogo = (pos, isMobile) => {
         const lookup = {
