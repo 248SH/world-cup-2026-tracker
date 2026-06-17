@@ -10,12 +10,12 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
     const getLogo = (pos, isMobile) => {
         const lookup = {
-            'GK': <SportsHandballIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />,
-            'DF': <ShieldOutlinedIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />,
-            'MF': <ZoomOutMapIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />,
-            'FW': <SportsSoccerIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />
+            'GK': <SportsHandballIcon sx={{ fontSize: isMobile ? '4rem' : '6rem' }} />,
+            'DF': <ShieldOutlinedIcon sx={{ fontSize: isMobile ? '4rem' : '6rem' }} />,
+            'MF': <ZoomOutMapIcon sx={{ fontSize: isMobile ? '4rem' : '6rem' }} />,
+            'FW': <SportsSoccerIcon sx={{ fontSize: isMobile ? '4rem' : '6rem' }} />
         }
-        return lookup[pos] || <PersonOutlineOutlinedIcon sx={{ fontSize: isMobile ? '5rem' : '7rem' }} />
+        return lookup[pos] || <PersonOutlineOutlinedIcon sx={{ fontSize: isMobile ? '4rem' : '6rem' }} />
     }
 
     const getAge = (date_of_birth) => {
@@ -33,10 +33,29 @@ const PlayerCard = ({ name, number, pos, date_of_birth }) => {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            padding: '10px',
+            padding: '15px',
+            paddingTop: '0px',
             gap: '8px',
         }}>
-            <Box sx={{marginBottom: '15px'}}>
+            <Box sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                "&::before": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+          background:
+            "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.04) 100%)",
+          pointerEvents: "none",
+          zIndex: 1,
+          borderRadius: '20px 20px 100px 100px',
+        },
+            }}></Box>
+            <Box sx={{marginBottom: '10px'}}>
             {getLogo(pos, isMobile)}
             </Box>
             <Typography variant="h5" component="div" mb={0.5} sx={{ color: 'white' }}>

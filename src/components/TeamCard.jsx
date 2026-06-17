@@ -19,21 +19,20 @@ const TeamCard = ({ name, group, confed, fontSize }) => {
     <Box
       mb={4}
       sx={{
-        marginBottom: "24px",
         backgroundColor: `rgba(10, 10, 10, 0.5)`,
-        border: "7px solid rgba(255, 255, 255, 0.8)",
-        borderRadius: "10px 10px 50px 50px",
+        border: "7px solid var(--gold)",
+        borderRadius: "20px 20px 75px 75px",
         display: "flex",
         flexDirection: "column",
         width: "clamp(280px, 45vw, 300px)",
         height: "clamp(300px, 40vw, 450px)",
-        transform: "scale(0.95)",
+        transform: "scale(0.85)",
         boxShadow: "5px 4px 8px rgba(0, 0, 0, 0.5)",
         transition: "border-color 0.3s ease, transform 0.3s ease",
         "&:hover": {
           borderColor:
             colours.primary === "#FFFFFF" ? colours.secondary : colours.primary,
-          transform: "scale(1)",
+          transform: "scale(0.95)",
           boxShadow: "10px 10px 50px rgba(0, 0, 0, 0.5)",
         },
         position: "relative",
@@ -46,7 +45,7 @@ const TeamCard = ({ name, group, confed, fontSize }) => {
           width: "100%",
           height: "100%",
           background:
-            "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.04) 100%)",
+            "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.04) 100%)",
           pointerEvents: "none",
           zIndex: 1,
         },
@@ -79,13 +78,13 @@ const TeamCard = ({ name, group, confed, fontSize }) => {
                 ? colours.secondary
                 : colours.primary,
             fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-            lineHeight: 0.8,
+            lineHeight: 1,
             fontFamily: "Bebas Neue, sans-serif",
           }}
         >
           {name}
         </Typography>
-        <Typography variant="h6" component="p" mb={0.5} sx={{ color: "white", fontSize: fontSize || 'clamp(1rem, 2vw, 1.5rem)' }}>
+        <Typography variant="h6" component="p" mb={0.5} sx={{ color: "white", fontSize: fontSize || 'clamp(1.5rem, 2vw, 2rem)' }}>
           Group {group}
         </Typography>
         <Typography variant="h6" component="p" mb={0.5} sx={{ color: "white", fontSize: fontSize || 'clamp(1rem, 2vw, 1.5rem)' }}>
@@ -99,7 +98,7 @@ const TeamCard = ({ name, group, confed, fontSize }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderRadius: "0 0 43px 43px",
+          borderRadius: "0 0 50px 50px",
           overflow: "hidden",
         }}
       >

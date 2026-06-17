@@ -7,7 +7,7 @@ export const baseCard = {
 
 export const shieldCard = {
     backgroundColor: `rgba(10, 10, 10, 0.5)`,
-                   borderRadius: '10px 10px 50px 50px',
+                   borderRadius: '20px 20px 100px 100px',
                    display: 'flex',
                    flexDirection: 'column',
                    width: 'clamp(180px, 45vw, 250px)',
