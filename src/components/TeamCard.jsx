@@ -24,7 +24,7 @@ const TeamCard = ({ name, group, confed, fontSize }) => {
         borderRadius: "20px 20px 75px 75px",
         display: "flex",
         flexDirection: "column",
-        width: "clamp(350px, 45vw, 300px)",
+        width: "clamp(280px, 45vw, 320px)",
         height: "clamp(400px, 40vw, 450px)",
         transform: "scale(0.85)",
         boxShadow: "5px 4px 8px rgba(0, 0, 0, 0.5)",
